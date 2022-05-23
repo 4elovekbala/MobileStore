@@ -64,6 +64,16 @@
                color: #9d9d9d;
                border-right: 1px solid #9d9d9d;
 
+               svg {
+                  cursor: pointer;
+
+                  &:hover {
+                     path {
+                        fill: yellow;
+                     }
+                  }
+               }
+
                &:last-child {
                   margin-right: 0;
                   border-right: none;
@@ -230,6 +240,18 @@
       .commentContainer {
          padding: 10px;
          background-color: #fff;
+
+         .userCommentWrapper {
+            margin-bottom: 15px;
+
+            .user {}
+
+            .userComment {}
+
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
 
          .commentInput {
             outline: none;

@@ -2,11 +2,13 @@ import { useEffect, useState  } from 'react';
 import { useSelector } from 'react-redux';
 import YouTube from 'react-youtube';
 import css from './Phone.module.scss';
+import { fakeComments as comments } from '../../data/fakeData';
 
 const Tabs = () => {
    const { data } = useSelector(state => state.phone);
+   const { isLoggedIn, name } = useSelector(state => state.user);
    const [value, setValue] = useState(0);
-   const [fakeComments, setfakeComments] = useState([]);
+   const [fakeComments, setfakeComments] = useState(comments);
    const [comment, setComment] = useState(false);
    const [commentValue, setCommentValue] = useState('');
 
@@ -39,16 +41,20 @@ const Tabs = () => {
 
 
    const commentHandler = () => {
-      setComment(true);
+      if(isLoggedIn){
+         setComment(true);
+      } else {
+         alert("Войдите в свой аккаунт")
+      }
    }
 
    const sendHandler = () => {
       setComment(false);
       if(commentValue != ""){
-         if(setfakeComments.length < 1){
-            setfakeComments([commentValue]);
-         }
-         setfakeComments([...fakeComments, commentValue]);
+         setfakeComments([...fakeComments, {
+            user : name,
+            comment : commentValue,
+         }]);
          setCommentValue('');
       } else {
          alert("Write Something!!");
@@ -109,9 +115,12 @@ const Tabs = () => {
                Number(value) === 2 && <div className={css.commentContainer}>
                      {
                         fakeComments.length >= 1 
-                        ? fakeComments.map((item, index) => {
+                        ? fakeComments.map((comment, index) => {
                            return (
-                              <p className={css.commentItem} key={index}>{item}</p>
+                              <div className={css.userCommentWrapper}>
+                                 <h4 className={css.user}>{comment.user}</h4>
+                                 <p className={css.userComment}>{comment.comment}</p>
+                              </div>
                            );
                         })
                         : <>

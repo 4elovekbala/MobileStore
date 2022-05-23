@@ -11,6 +11,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { searchPhone } from '../../api/api';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPhoneThunk } from '../../store/PhoneReducer';
+import { logOutThunk } from '../../store/UserReducer';
 
 const Header = () => {
    const dispatch = useDispatch();
@@ -26,6 +27,10 @@ const Header = () => {
          alert("Write Something!!!");
       }
       setSearch('');
+   }
+
+   const logoutHandler = () => {
+      dispatch(logOutThunk());
    }
 
 
@@ -70,6 +75,9 @@ const Header = () => {
                   <li className={css.authItem}>
                      <NavLink className={css.item} to={isLoggedIn ? '/user' : '/auth'}><FontAwesomeIcon icon={faUserCircle} /> {name ? name : "Личный Кабинет"}</NavLink>
                   </li>
+                  {
+                     isLoggedIn && <li onClick={logoutHandler} className={css.authItemLoggin}>Log out</li>
+                  }
                   <li className={css.authItem}>
                      {
                         isLoggedIn 
