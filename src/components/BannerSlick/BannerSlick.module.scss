@@ -1,0 +1,56 @@
+.slider {
+   width: 300px;
+   height: auto;
+   margin-bottom: 20px;
+   background-color: #fff;
+
+   a {
+      width: 100%;
+      text-decoration: none;
+      border-bottom: 1px solid #f3f3f3;
+
+      &:hover {
+         .name {
+            color: #ea5e67;
+         }
+      }
+   }
+
+   .item {
+      display: inline-flex !important;
+      flex-wrap: nowrap;
+      padding: 20px;
+      gap: 10px;
+
+      .image {
+         width: auto;
+         height: 90px;
+         padding: 10px;
+      }
+
+      div {
+         padding: 10px;
+
+         .name {
+            font-size: 18px;
+            font-weight: 400;
+            color: #191919;
+            transition: all .3s linear;
+         }
+
+         .cost {
+            color: #54cad3;
+            font-size: 24px;
+            letter-spacing: .5px;
+            font-weight: 400;
+            margin-top: 10px;
+         }
+      }
+   }
+}
+
+.title {
+   margin-bottom: 10px;
+   text-transform: uppercase;
+   letter-spacing: 1.2px;
+}

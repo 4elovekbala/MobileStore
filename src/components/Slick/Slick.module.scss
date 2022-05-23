@@ -1,0 +1,201 @@
+.inner {
+   width: 100%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+
+   .slider {
+      &>div>ul {
+         width: initial;
+         bottom: 30px;
+         left: 30px;
+
+         li button::before {
+            font-size: 15px;
+            color: #fff;
+         }
+
+      }
+
+      width: 760px;
+      height: 520px;
+   }
+
+   .parent {
+      display: block;
+      width: 760px;
+      height: 520px;
+      position: relative;
+      text-decoration: none;
+
+      &:hover::before {
+         transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0);
+      }
+
+      &::before {
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         background: rgba(255, 255, 255, 0.5);
+         content: '';
+         transition: transform 0.9s;
+         -moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+         -ms-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+         -o-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+         -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+         transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+      }
+
+      .sliderBanner {
+         position: absolute;
+         top: 62px;
+         left: 78px;
+
+         .sliderText {
+            font-size: 40px;
+            color: #fff;
+
+            p {
+               font-weight: 400;
+               letter-spacing: 0;
+               font-size: 30px;
+            }
+
+            em {
+               margin-top: -6px;
+               display: block;
+               font-style: normal;
+               font-size: 70px;
+               font-weight: 700;
+            }
+         }
+
+         .sliderBtn {
+            font-size: 12px;
+            color: #FFF;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 25px;
+            background: #191919;
+            padding: 15px 30px;
+            transition: all .3s linear;
+            cursor: pointer;
+
+            &:hover {
+               background-color: #fff;
+               color: #191919;
+            }
+         }
+      }
+
+      .item {
+         width: 760px;
+         height: 520px;
+      }
+   }
+
+   .banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .bannerItem {
+         width: 370px;
+         height: 250px;
+      }
+
+      .bannerWrapper {
+         position: relative;
+         overflow: hidden;
+
+         &:hover::before {
+            transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0);
+         }
+
+         &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.5);
+            content: '';
+            transition: transform 0.9s;
+            -moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+            -ms-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+            -o-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+            -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+            transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+         }
+
+         .desc {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+
+            h3 {
+               font-size: 30px;
+               line-height: 40px;
+               color: #fff;
+               margin-bottom: 8px;
+            }
+
+            .price {
+               font-size: 30px;
+               color: #fff;
+               font-weight: 700;
+
+               span {
+                  display: block;
+                  font-size: 20px;
+                  text-decoration: line-through;
+                  font-weight: 400;
+                  margin-bottom: 12px;
+               }
+            }
+         }
+      }
+   }
+}
+
+.slideUp {
+   -webkit-animation-name: slideInUp;
+   animation-name: slideInUp;
+}
+
+.slideLeft {
+   -webkit-animation-name: slideLeft;
+   animation-name: slideLeft;
+}
+
+
+@keyframes slideLeft {
+   0% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+   }
+
+   100% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+   }
+}
+
+@keyframes slideUp {
+   0% {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+   }
+
+   100% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+   }
+}

@@ -1,0 +1,225 @@
+.section {
+   position: sticky;
+   top: 0;
+   border-bottom: 1px solid #d4d4d4;
+   z-index: 5;
+   background-color: #191919;
+
+   .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 20px;
+
+      .logo {
+         color: #fff;
+         font-size: 18px;
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: nowrap;
+         align-items: center;
+
+         .logoItem {
+            color: #fff;
+            letter-spacing: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+         }
+
+         cursor: pointer;
+      }
+
+      .searchContainer {
+         position: relative;
+
+
+         .itemsWrapper {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            overflow-y: scroll;
+            max-height: 400px;
+
+            .items {
+               width: 100%;
+               padding: 10px;
+               transition: all .3s ease-in-out;
+               cursor: pointer;
+
+               .itemsItem {
+                  width: 100%;
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  flex-wrap: nowrap;
+
+                  img {
+                     width: 64px;
+                     height: auto;
+                     margin-right: 40px;
+                  }
+
+                  p {
+                     font-size: 16px;
+                     color: #191919;
+                     text-decoration: none;
+                  }
+               }
+
+               &:hover {
+                  background-color: #ea5e67;
+               }
+            }
+         }
+
+         .searchWrapper {
+            position: relative;
+
+            .search {
+               width: 480px;
+               height: 40px;
+               padding: 8px 40px 8px 16px;
+               font-size: 16px;
+               //border-radius: 22px;
+               background-color: #fff;
+               text-transform: capitalize;
+               outline: none;
+               border: none;
+            }
+
+            .searchInner {
+               cursor: pointer;
+
+               .searchIcon {
+                  color: #191919;
+                  position: absolute;
+                  top: 50%;
+                  right: 3%;
+                  transform: translate(0, -50%);
+
+                  &:hover {
+                     font-size: 18px;
+                  }
+               }
+            }
+         }
+      }
+
+      .userProfile {
+         .auth {
+            display: flex;
+            flex-wrap: nowrap;
+            list-style: none;
+            gap: 25px;
+
+            .authItem {
+
+               .item,
+               .shopWrapper {
+                  text-decoration: none;
+                  font-size: 16px;
+                  color: #fff;
+                  position: relative;
+                  text-transform: uppercase;
+
+                  &::after {
+                     position: absolute;
+                     content: "";
+                     width: 100%;
+                     height: 1.5px;
+                     background-color: #ea5e67;
+                     transform: scaleX(0);
+                     transition: transform .3s ease-in-out;
+                     transform-origin: right;
+                     bottom: -7px;
+                     left: 0;
+                  }
+               }
+
+
+               .shopWrapper {
+                  margin-right: 25px;
+                  transition: color .2s linear;
+
+                  .shoppingCart {
+                     cursor: pointer;
+                     color: #fff;
+                     transition: all .2s linear;
+                  }
+
+                  &:hover {
+                     color: #ea5e67;
+
+                     .shoppingCart {
+                        color: #ea5e67;
+                     }
+                  }
+
+                  &:hover::after {
+                     transform: scaleX(1);
+                     transform-origin: left;
+                  }
+
+                  &:last-child {
+                     margin-right: 0;
+                  }
+               }
+
+               &:hover {
+                  .item {
+                     color: #ea5e67;
+
+                     &:hover::after {
+                        transform: scaleX(1);
+                        transform-origin: left;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+.dropdownWrapper {
+   display: block;
+   width: 160px;
+   height: auto;
+
+   .dropdownInner {
+      position: relative;
+
+      .dropdown {
+         position: absolute;
+         list-style: none;
+         background-color: transparent;
+         background-color: #191919;
+         padding: 0 10px;
+
+         .dropdownItem {
+            color: #fff;
+            text-transform: capitalize;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: none;
+            text-decoration: none;
+            transition: all .2s ease-in;
+
+            &:hover {
+               color: #ea5e67;
+            }
+         }
+      }
+
+      .activeLink {
+         display: block !important;
+      }
+   }
+}

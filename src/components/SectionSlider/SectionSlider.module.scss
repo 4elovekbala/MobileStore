@@ -1,0 +1,52 @@
+.section {
+   margin-bottom: 30px;
+
+   .titleWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      .title {
+         text-transform: uppercase;
+         letter-spacing: 1.2px;
+         margin-bottom: 0;
+      }
+
+      .popular {
+         letter-spacing: 0.5px;
+         padding: 13px 20px;
+         text-transform: uppercase;
+         color: #191919;
+         background: #e2e2e2;
+         font-weight: 500;
+         cursor: pointer;
+      }
+   }
+
+   &:last-child {
+      margin-bottom: 0;
+   }
+
+   .sliderWrapper {
+      width: 100%;
+      background-color: #fff;
+      border-top: 1px solid #ea5e67;
+
+      .slider {
+
+         div {
+            button {
+               &::before {
+                  color: black;
+               }
+            }
+         }
+      }
+   }
+
+   .title {
+      margin-bottom: 10px;
+   }
+}
