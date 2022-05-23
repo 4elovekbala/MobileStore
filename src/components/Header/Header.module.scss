@@ -118,6 +118,17 @@
             list-style: none;
             gap: 25px;
 
+            .authItemLoggin {
+               color: #fff;
+               text-transform: uppercase;
+               cursor: pointer;
+               transition: .3s ease-in;
+
+               &:hover {
+                  color: #ea5e67;
+               }
+            }
+
             .authItem {
 
                .item,

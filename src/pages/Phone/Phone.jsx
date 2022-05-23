@@ -11,10 +11,12 @@ import { searchPhone } from '../../api/api';
 import CartCounter from '../Cart/CartCounter';
 import Zoom from '../../components/Zoom/Zoom';
 import Loader from '../../components/Loader/Loader';
+//import { addPhonesToCart } from '../../store/CartReducer';
 
 const Phone = () => {
    let { id } = useParams();
-   const dispatch = useDispatch();
+   const { isLoggedIn } = useSelector(state => state.user);
+   const dispatch = useDispatch(); 
    const { status, data, fetching } = useSelector(state => state.phone);
    const colors = ['Черный', 'Белый', 'Красный', 'Желтый', 'Зеленый'];
    const [slider, setSlider] = useState([]);
@@ -34,6 +36,15 @@ const Phone = () => {
       }
    }, [data]);
 
+
+   const clickHandler = () => {
+      if(isLoggedIn){
+         //dispatch(addPhonesToCart());
+         alert("Добавлено");
+      } else{
+         alert("Водите в аккаунт");
+      }
+   }
 
    return (
       <div className={css.itemContainer}>
@@ -95,7 +106,7 @@ const Phone = () => {
                      <div className={css.count}>
                         Количество 
                         <CartCounter />
-                        <button className={css.btn}>Купить</button>
+                        <button onClick={clickHandler} className={css.btn}>Купить</button>
                      </div>
                   </div>
                </div>
