@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MobileStore/static/css/main.98dda68e.css",
-    "main.js": "/MobileStore/static/js/main.9727c48c.js",
+    "main.css": "/MobileStore/static/css/main.204a850f.css",
+    "main.js": "/MobileStore/static/js/main.8671692c.js",
     "static/media/iphone-2.jpg": "/MobileStore/static/media/iphone-2.612ee94b0153c1f47e45.jpg",
     "static/media/iphone-1.jpg": "/MobileStore/static/media/iphone-1.fb69dbace73538afe1fe.jpg",
     "static/media/iphone-3.jpg": "/MobileStore/static/media/iphone-3.1c23c451a23000f6d01a.jpg",
@@ -13,11 +13,11 @@
     "static/media/slick.ttf": "/MobileStore/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/MobileStore/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/MobileStore/index.html",
-    "main.98dda68e.css.map": "/MobileStore/static/css/main.98dda68e.css.map",
-    "main.9727c48c.js.map": "/MobileStore/static/js/main.9727c48c.js.map"
+    "main.204a850f.css.map": "/MobileStore/static/css/main.204a850f.css.map",
+    "main.8671692c.js.map": "/MobileStore/static/js/main.8671692c.js.map"
   },
   "entrypoints": [
-    "static/css/main.98dda68e.css",
-    "static/js/main.9727c48c.js"
+    "static/css/main.204a850f.css",
+    "static/js/main.8671692c.js"
   ]
 }
